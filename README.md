@@ -60,63 +60,75 @@ Bilgisayarınızda port bilgisi değişebilir, bu değişikliği göz önünde b
 
 ---
 
-### 💱 Coin İşlemleri
+### 💱 Koin İşlemleri
 > Tüm coin uç noktaları için `Authorization: Bearer <token>` başlığı gereklidir.
 
-#### 🔹 Tüm Coinleri Listele
+#### 🔹 Tüm Koinleri Listele
 ```bash
 GET http://localhost:5269/api/Price/market
 ```
+![](Images/GetCoins.png)
 
-#### 🔹 ID ile Coin Getir
+#### 🔹 ID ile Koin Getir
 ```bash
 GET http://localhost:5269/api/Price/market/3
 ```
+![](Images/GetCoin_With-id.png)
 
-#### 🔹 Sembol ile Coin Getir
+#### 🔹 Sembol ile Koin Getir
 ```bash
 GET http://localhost:5269/api/Price/market/BTC
 ```
+![](Images/GetCoin_With-symbol.png)
 
-#### 🔹 Sıralanmış Coinleri Getir
+#### 🔹 Sıralanmış Koinleri Getir
 ```bash
 GET http://localhost:5269/api/Price/market/sort?variable=symbol&sortDirection=asc
 ```
+![](Images/GetSortedCoin.png)
 
-#### 🔹 Filtrelenmiş Coinleri Getir
+#### 🔹 Filtrelenmiş Koinleri Getir
 ```bash
 GET http://localhost:5269/api/Price/market/filter?variable=price&operatorr=<&rate=1
 ```
+![](Images/GetFilteredCoins.png)
 
 #### 🔹 Between Sorgusu ile Filtreleme
 ```bash
 GET http://localhost:5269/api/Price/market/filter?variable=price&operatorr=between&rate=50&rate2=200
 ```
+![](Images/GetFilteredCoins_with-between.png)
 
-#### 🔹 Id ile Coin Güncelle
+#### 🔹 Id ile Koin Güncelle
 ```bash
 PUT http://localhost:5269/api/Price/market/6
 ```
+![](Images/UpdateCoin_with-id.png)
 
-#### 🔹 CoinName ile Coin Güncelle
+#### 🔹 Sembol ile Koin Güncelle
 ```bash
 PUT http://localhost:5269/api/Price/market/XRP
 ```
+![](Images/UpdateCoin_with-symbol.png)
 
-#### 🔹 Coin Ekle
+
+#### 🔹 Koin Ekle
 ```bash
 POST http://localhost:5269/api/Price/market
 ```
+![](Images/CreateCoin.png)
 
-#### 🔹 ID ile Coin Sil
+#### 🔹 ID ile Koin Sil
 ```bash
 DELETE http://localhost:5269/api/Price/market/98
 ```
+![](Images/RemoveCoin_with-id.png)
 
-#### 🔹 CoinName ile Coin Sil
+#### 🔹 Sembol ile Coin Sil
 ```bash
 DELETE http://localhost:5269/api/Price/market/ICX
 ```
+![](Images/UpdateCoin_with-symbol.png)
 
 ---
 
@@ -126,11 +138,13 @@ DELETE http://localhost:5269/api/Price/market/ICX
 ```bash
 POST http://localhost:5269/api/User/Identity/register
 ```
+![](Images/Register.png)
 
 #### 🔹 Kullanıcı Girişi
 ```bash
 POST http://localhost:5269/api/User/Identity/login
 ```
+![](Images/Login.png)
 
 ---
 
