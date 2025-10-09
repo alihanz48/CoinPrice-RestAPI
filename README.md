@@ -179,7 +179,7 @@ It is built with **Entity Framework Core** and works with a **MySQL** database u
    }
    ```
 
-3. **Install dependencies:**
+3. **Install everything required for the .NET project to run:**
    ```bash
    dotnet restore
    ```
