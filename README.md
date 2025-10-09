@@ -25,212 +25,264 @@ Proje, **Entity Framework Core** ile geliştirilmiştir, **ORM - LINQ** ve **EF 
    ```bash
    git clone https://github.com/alihanz48/CoinPriceAPI.git
    cd CoinPriceAPI
-appsettings.json dosyasına kendi veritabanı bağlantı bilgisini ve JWT anahtarını ekleyin:
+   ```
 
-json
-Kodu kopyala
-"ConnectionStrings": {
-  "DefaultConnection": "server=localhost;port=3306;database=coinpriceapi;user=root;password=yourpassword;"
-},
-"JwtKey": {
-  "Key": "supersecretkey1234567890"
-}
-.NET bağımlılıklarını yükleyin:
+2. **`appsettings.json` dosyasına** kendi veritabanı bağlantı bilgisini ve JWT anahtarını ekleyin:
+   ```json
+   "ConnectionStrings": {
+     "DefaultConnection": "server=localhost;port=3306;database=coinpriceapi;user=root;password=yourpassword;"
+   },
+   "JwtKey": {
+     "Key": "supersecretkey1234567890"
+   }
+   ```
 
-bash
-Kodu kopyala
-dotnet restore
-Veritabanı Migration işlemlerini gerçekleştirin:
+3. **.NET bağımlılıklarını yükleyin:**
+   ```bash
+   dotnet restore
+   ```
 
-bash
-Kodu kopyala
-dotnet ef migrations add --context CoinPriceApiContext
-dotnet ef database update --context CoinPriceApiContext
-dotnet ef migrations add --context UserIdentityContext
-dotnet ef database update --context UserIdentityContext
-API'yi başlatın:
+4. **Veritabanı Migration işlemlerini gerçekleştirin:**
+   ```bash
+   dotnet ef migrations add --context CoinPriceApiContext
+   dotnet ef database update --context CoinPriceApiContext
+   dotnet ef migrations add --context UserIdentityContext
+   dotnet ef database update --context UserIdentityContext
+   ```
 
-bash
-Kodu kopyala
-dotnet watch run
-Tarayıcıdan veya Postman üzerinden test edin:
-👉 http://localhost:5269/swagger
+5. **API'yi başlatın:**
+   ```bash
+   dotnet watch run
+   ```
 
-💱 Coin İşlemleri
-Tüm coin uç noktaları için Authorization: Bearer <token> başlığı gereklidir.
+6. Tarayıcıdan veya Postman üzerinden test edin:  
+   👉 `http://localhost:5269/swagger`
 
-🔹 Tüm Coinleri Listele
-bash
-Kodu kopyala
+---
+
+### 💱 Coin İşlemleri
+> Tüm coin uç noktaları için `Authorization: Bearer <token>` başlığı gereklidir.
+
+#### 🔹 Tüm Coinleri Listele
+```bash
 GET http://localhost:5269/api/Price/market
-🔹 ID ile Coin Getir
-bash
-Kodu kopyala
+```
+
+#### 🔹 ID ile Coin Getir
+```bash
 GET http://localhost:5269/api/Price/market/3
-🔹 Sembol ile Coin Getir
-bash
-Kodu kopyala
+```
+
+#### 🔹 Sembol ile Coin Getir
+```bash
 GET http://localhost:5269/api/Price/market/BTC
-🔹 Sıralanmış Coinleri Getir
-bash
-Kodu kopyala
+```
+
+#### 🔹 Sıralanmış Coinleri Getir
+```bash
 GET http://localhost:5269/api/Price/market/sort?variable=symbol&sortDirection=asc
-🔹 Filtrelenmiş Coinleri Getir
-bash
-Kodu kopyala
+```
+
+#### 🔹 Filtrelenmiş Coinleri Getir
+```bash
 GET http://localhost:5269/api/Price/market/filter?variable=price&operatorr=<&rate=1
-🔹 Between Sorgusu ile Filtreleme
-bash
-Kodu kopyala
+```
+
+#### 🔹 Between Sorgusu ile Filtreleme
+```bash
 GET http://localhost:5269/api/Price/market/filter?variable=price&operatorr=between&rate=50&rate2=200
-🔹 Id ile Coin Güncelle
-bash
-Kodu kopyala
+```
+
+#### 🔹 Id ile Coin Güncelle
+```bash
 PUT http://localhost:5269/api/Price/market/6
-🔹 CoinName ile Coin Güncelle
-bash
-Kodu kopyala
+```
+
+#### 🔹 CoinName ile Coin Güncelle
+```bash
 PUT http://localhost:5269/api/Price/market/XRP
-🔹 Coin Ekle
-bash
-Kodu kopyala
+```
+
+#### 🔹 Coin Ekle
+```bash
 POST http://localhost:5269/api/Price/market
-🔹 ID ile Coin Sil
-bash
-Kodu kopyala
+```
+
+#### 🔹 ID ile Coin Sil
+```bash
 DELETE http://localhost:5269/api/Price/market/98
-🔹 CoinName ile Coin Sil
-bash
-Kodu kopyala
+```
+
+#### 🔹 CoinName ile Coin Sil
+```bash
 DELETE http://localhost:5269/api/Price/market/ICX
-🔐 Kullanıcı İşlemleri
-🔹 Kullanıcı Kaydı
-bash
-Kodu kopyala
+```
+
+---
+
+### 🔐 Kullanıcı İşlemleri
+
+#### 🔹 Kullanıcı Kaydı
+```bash
 POST http://localhost:5269/api/User/Identity/register
-🔹 Kullanıcı Girişi
-bash
-Kodu kopyala
+```
+
+#### 🔹 Kullanıcı Girişi
+```bash
 POST http://localhost:5269/api/User/Identity/login
-👨‍💻 Geliştirici
-Alihan Dursun
-📧 dursun.alihan@icloud.com
-🔗 LinkedIn
-💻 GitHub
+```
 
-🇬🇧 English Description
-📄 About the Project
+---
 
-CoinPriceAPI is a .NET 8 Web API project designed to manage cryptocurrency prices and handle user authentication using JWT (JSON Web Token).
-It is built with Entity Framework Core and works with a MySQL database using ORM, LINQ, and Identity for secure user registration and login.
+### 👨‍💻 Geliştirici
+**Alihan Dursun**  
+📧 dursun.alihan@icloud.com  
+🔗 [LinkedIn](https://linkedin.com/in/alihan-dursun)  
+💻 [GitHub](https://github.com/alihanz48)
 
-🧩 Technologies Used
+---
 
-ASP.NET Core 8.0
+## 🇬🇧 English Description
 
-Entity Framework Core
+### 📄 About the Project
+**CoinPriceAPI** is a **.NET 8 Web API** project designed to manage cryptocurrency prices and handle user authentication using **JWT (JSON Web Token)**.  
+It is built with **Entity Framework Core** and works with a **MySQL** database using **ORM, LINQ**, and **Identity** for secure user registration and login.
 
-MySQL
+---
 
-ASP.NET Core Identity
+### 🧩 Technologies Used
+- ASP.NET Core 8.0  
+- Entity Framework Core  
+- MySQL  
+- ASP.NET Core Identity  
+- JWT Authentication  
+- LINQ & EF Dynamic Filtering  
+- POSTMAN (API Testing Tool)
 
-JWT Authentication
+---
 
-LINQ & EF Dynamic Filtering
+### ⚙️ Setup Steps
 
-POSTMAN (API Testing Tool)
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/alihanz48/CoinPriceAPI.git
+   cd CoinPriceAPI
+   ```
 
-⚙️ Setup Steps
+2. **Edit `appsettings.json` and add your database connection & JWT key:**
+   ```json
+   "ConnectionStrings": {
+     "DefaultConnection": "server=localhost;port=3306;database=coinpriceapi;user=root;password=yourpassword;"
+   },
+   "JwtKey": {
+     "Key": "supersecretkey1234567890"
+   }
+   ```
 
-Clone the repository:
+3. **Install dependencies:**
+   ```bash
+   dotnet restore
+   ```
 
-git clone https://github.com/alihanz48/CoinPriceAPI.git
-cd CoinPriceAPI
+4. **Apply migrations and update the database:**
+   ```bash
+   dotnet ef migrations add --context CoinPriceApiContext
+   dotnet ef database update --context CoinPriceApiContext
+   dotnet ef migrations add --context UserIdentityContext
+   dotnet ef database update --context UserIdentityContext
+   ```
 
+5. **Run the API:**
+   ```bash
+   dotnet watch run
+   ```
 
-Edit appsettings.json and add your database connection & JWT key:
+6. Open in browser or Postman:  
+   👉 `http://localhost:5269/swagger`
 
-"ConnectionStrings": {
-  "DefaultConnection": "server=localhost;port=3306;database=coinpriceapi;user=root;password=yourpassword;"
-},
-"JwtKey": {
-  "Key": "supersecretkey1234567890"
-}
+---
 
+### 💱 Coin Endpoints
+> All coin endpoints require `Authorization: Bearer <token>` header.
 
-Install dependencies:
-
-dotnet restore
-
-
-Apply migrations and update the database:
-
-dotnet ef migrations add --context CoinPriceApiContext
-dotnet ef database update --context CoinPriceApiContext
-dotnet ef migrations add --context UserIdentityContext
-dotnet ef database update --context UserIdentityContext
-
-
-Run the API:
-
-dotnet watch run
-
-
-Open in browser or Postman:
-👉 http://localhost:5269/swagger
-
-💱 Coin Endpoints
-
-All coin endpoints require Authorization: Bearer <token> header.
-
-Get All Coins
+#### Get All Coins
+```bash
 GET http://localhost:5269/api/Price/market
+```
 
-Get Coin by ID
+#### Get Coin by ID
+```bash
 GET http://localhost:5269/api/Price/market/3
+```
 
-Get Coin by Symbol
+#### Get Coin by Symbol
+```bash
 GET http://localhost:5269/api/Price/market/BTC
+```
 
-Get Sorted Coins
+#### Get Sorted Coins
+```bash
 GET http://localhost:5269/api/Price/market/sort?variable=symbol&sortDirection=asc
+```
 
-Filter Coins
+#### Filter Coins
+```bash
 GET http://localhost:5269/api/Price/market/filter?variable=price&operatorr=<&rate=1
+```
 
-Filter Between Values
+#### Filter Between Values
+```bash
 GET http://localhost:5269/api/Price/market/filter?variable=price&operatorr=between&rate=50&rate2=200
+```
 
-Update Coin by ID
+#### Update Coin by ID
+```bash
 PUT http://localhost:5269/api/Price/market/6
+```
 
-Update Coin by Name
+#### Update Coin by Name
+```bash
 PUT http://localhost:5269/api/Price/market/XRP
+```
 
-Add New Coin
+#### Add New Coin
+```bash
 POST http://localhost:5269/api/Price/market
+```
 
-Delete Coin by ID
+#### Delete Coin by ID
+```bash
 DELETE http://localhost:5269/api/Price/market/98
+```
 
-Delete Coin by Name
+#### Delete Coin by Name
+```bash
 DELETE http://localhost:5269/api/Price/market/ICX
+```
 
-🔐 User Endpoints
-Register User
+---
+
+### 🔐 User Endpoints
+
+#### Register User
+```bash
 POST http://localhost:5269/api/User/Identity/register
+```
 
-Login User
+#### Login User
+```bash
 POST http://localhost:5269/api/User/Identity/login
+```
 
-👨‍💻 Developer
+---
 
-Alihan Dursun
-📧 dursun.alihan@icloud.com
+### 👨‍💻 Developer
+**Alihan Dursun**  
+📧 dursun.alihan@icloud.com  
+🔗 [LinkedIn](https://linkedin.com/in/alihan-dursun)  
+💻 [GitHub](https://github.com/alihanz48)
 
-🔗 LinkedIn
+---
 
-💻 GitHub
-
-⭐ Projeyi beğendiyseniz yıldız vermeyi unutmayın!
+⭐ Projeyi beğendiyseniz yıldız vermeyi unutmayın!  
 ⭐ If you like this project, don’t forget to leave a star on GitHub!
