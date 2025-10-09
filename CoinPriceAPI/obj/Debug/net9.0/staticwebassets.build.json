@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "IKA2OM8oFpym7fvzpCDZRZ9h3rg5oHTWKNRgoglZPpA=",
+  "Source": "CoinPriceAPI",
+  "BasePath": "_content/CoinPriceAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
