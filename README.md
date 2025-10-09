@@ -37,7 +37,7 @@ Proje, **Entity Framework Core** ile geliştirilmiştir, **ORM - LINQ** ve **EF 
    }
    ```
 
-3. **.NET bağımlılıklarını yükleyin:**
+3. **.NET çalışması için gerekli olan her şeyi yükleyin:**
    ```bash
    dotnet restore
    ```
