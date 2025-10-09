@@ -5,7 +5,7 @@
 ### 📄 Proje Hakkında
 **CoinPriceAPI**, kripto para birimlerinin fiyatlarını yöneten ve kullanıcı kimlik doğrulaması için **JWT (JSON Web Token)** kullanan bir **.NET 8 Web API** projesidir.  
 Proje, **Entity Framework Core** ile geliştirilmiştir, **ORM - LINQ** ve **EF Core** kullanılarak **MySQL** veritabanı üzerinde çalışır ve **Identity** sistemi ile güvenli kullanıcı kaydı / girişi sağlar.
-
+Bilgisayarınızda port bilgisi değişebilir, bu değişikliği göz önünde bulundurarak programı çalıştırınız.
 ---
 
 ### 🧩 Kullanılan Teknolojiler
@@ -56,7 +56,7 @@ Proje, **Entity Framework Core** ile geliştirilmiştir, **ORM - LINQ** ve **EF 
    ```
 
 6. Tarayıcıdan veya Postman üzerinden test edin:  
-   👉 `http://localhost:5269/swagger`
+   👉 `http://localhost:5269/api/Price/market`
 
 ---
 
@@ -147,7 +147,7 @@ POST http://localhost:5269/api/User/Identity/login
 ### 📄 About the Project
 **CoinPriceAPI** is a **.NET 8 Web API** project designed to manage cryptocurrency prices and handle user authentication using **JWT (JSON Web Token)**.  
 It is built with **Entity Framework Core** and works with a **MySQL** database using **ORM, LINQ**, and **Identity** for secure user registration and login.
-
+The port number on your computer may vary, so please run the program while considering this change.
 ---
 
 ### 🧩 Technologies Used
@@ -198,7 +198,7 @@ It is built with **Entity Framework Core** and works with a **MySQL** database u
    ```
 
 6. Open in browser or Postman:  
-   👉 `http://localhost:5269/swagger`
+   👉 `http://localhost:5269/api/Price/market`
 
 ---
 
